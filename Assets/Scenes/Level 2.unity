@@ -2914,11 +2914,12 @@ MonoBehaviour:
     m_Bits: 64
   state: 0
   dashDist: 15
-  lvlnum: 1
+  lvlnum: 3
   jumpSound: {fileID: 1690257367}
   dashSound: {fileID: 1690257368}
   walkSound: {fileID: 1690257369}
-  hurtbySpikeSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  playerJump: {fileID: 0}
 --- !u!82 &1690257367
 AudioSource:
   m_ObjectHideFlags: 0

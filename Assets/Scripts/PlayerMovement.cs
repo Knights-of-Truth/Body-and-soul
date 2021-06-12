@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded(feet) && ( state == 0 || state == 2)){
+            if (state == 0){
+                jumpForce = 30;
+            }
             Jump();
             }
         
@@ -49,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && ( state == 1 || state == 2)){
+            if (state == 1){
+                dashDist = 20;
+            }
             if (dx > 0 && !Dashed){
                 StartCoroutine(Dash(1));
             }else if (!Dashed){
@@ -103,8 +109,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy")){
-            if(hurtSound.isPlaying == false)
-                hurtSound.Play();
+            /*if(hurtSound.isPlaying == false)
+                hurtSound.Play();*/
             gameObject.transform.position = respawnPoint;
         }
         if(other.gameObject.CompareTag("Win")){

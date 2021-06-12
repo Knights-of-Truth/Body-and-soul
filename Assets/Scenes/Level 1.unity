@@ -4885,7 +4885,7 @@ MonoBehaviour:
     m_Bits: 64
   state: 2
   dashDist: 15
-  lvlnum: 1
+  lvlnum: 2
   jumpSound: {fileID: 1690257367}
   dashSound: {fileID: 1690257368}
   walkSound: {fileID: 1690257369}
