@@ -15,11 +15,19 @@ public class PlayerMovement : MonoBehaviour
     bool isDashing;
     public int state;
     public float dashDist;
-    private void Start() {
+    [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private AudioSource dashSound;
+    [SerializeField] private AudioSource walkSound;
+
     
+    private void Start() {
+        
     }
     private void Update() {
         dx=Input.GetAxisRaw("Horizontal");
+        if(dx!=0 && walkSound.isPlaying == false){
+            walkSound.PlayDelayed(0.05f);
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded(feet) && ( state == 0 || state == 2)){
             Jump();
@@ -41,11 +49,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate() {
         if (!isDashing){
-        Vector2 movement = new Vector2(dx * movementSpeed, rb.velocity.y);
-        rb.velocity = movement;
+            Vector2 movement = new Vector2(dx * movementSpeed, rb.velocity.y);
+            rb.velocity = movement;
+            
         }
     }
     void Jump(){
+        jumpSound.Play();
         Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
         rb.velocity = movement;
     }
@@ -59,6 +69,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     IEnumerator Dash (float direction){
+
+        dashSound.Play();
         isDashing = true;
         Dashed = true;
         //anim.SetBool("IsDashing", isDashing);
