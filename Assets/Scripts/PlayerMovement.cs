@@ -40,11 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     private void FixedUpdate() {
-<<<<<<< Updated upstream
-        dx=Input.GetAxisRaw("Horizontal");
-=======
         if (!isDashing){
->>>>>>> Stashed changes
         Vector2 movement = new Vector2(dx * movementSpeed, rb.velocity.y);
         rb.velocity = movement;
         }
