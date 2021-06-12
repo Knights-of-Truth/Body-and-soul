@@ -1179,7 +1179,7 @@ Tilemap:
   m_GameObject: {fileID: 1150744311}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: 12, y: -8, z: 0}
+  - first: {x: 14, y: 6, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -1222,7 +1222,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: -8, z: 0}
-  m_Size: {x: 13, y: 8, z: 1}
+  m_Size: {x: 16, y: 15, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2864,8 +2864,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e688b45bcc6818e44abae2f2f06a67f7, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   movementSpeed: 10
   rb: {fileID: 1690257362}
   jumpForce: 30
@@ -2875,7 +2875,7 @@ MonoBehaviour:
     m_Bits: 64
   state: 0
   dashDist: 15
-  lvlnum:
+  lvlnum: 
   jumpSound: {fileID: 1690257367}
   dashSound: {fileID: 1690257368}
   walkSound: {fileID: 1690257369}

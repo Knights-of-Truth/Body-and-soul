@@ -109,8 +109,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy")){
-            /*if(hurtSound.isPlaying == false)
-                hurtSound.Play();*/
+            if(hurtSound.isPlaying == false)
+                hurtSound.Play();
             gameObject.transform.position = respawnPoint;
         }
         if(other.gameObject.CompareTag("Win")){
