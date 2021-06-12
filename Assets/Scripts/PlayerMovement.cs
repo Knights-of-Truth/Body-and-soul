@@ -8,9 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     float dx;
     private void Start() {
-        dx=Input.GetAxisRaw("Horizontal");
+        
     }
     private void FixedUpdate() {
+        dx=Input.GetAxisRaw("Horizontal");
         Vector2 movement = new Vector2(dx * movementSpeed, rb.velocity.y);
         rb.velocity = movement;
     }
