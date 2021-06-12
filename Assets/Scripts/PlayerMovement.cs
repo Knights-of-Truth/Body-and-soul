@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     bool isDashing;
     public int state;
     public float dashDist;
+    public string lvlnum;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
@@ -99,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.transform.position = respawnPoint;
         }
         if(other.gameObject.CompareTag("Win")){
-            SceneManager.LoadScene("Level 2");
+            SceneManager.LoadScene("Level "+ lvlnum);
         }
     }
 }
