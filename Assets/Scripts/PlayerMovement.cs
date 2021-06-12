@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     private void FixedUpdate() {
+        dx=Input.GetAxisRaw("Horizontal");
         Vector2 movement = new Vector2(dx * movementSpeed, rb.velocity.y);
         rb.velocity = movement;
     }
