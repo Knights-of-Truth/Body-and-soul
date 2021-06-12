@@ -20,14 +20,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
-    [SerializeField] private AudioSource hurtbySpikeSound;
+    [SerializeField] private AudioSource hurtSound;
     Vector3 respawnPoint;
+    private Sprite playerSprite;
+
+    public Sprite playerJump;
 
     
     private void Start() {
+        
         respawnPoint = gameObject.transform.position;
     }
     private void Update() {
+        playerSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
         dx=Input.GetAxisRaw("Horizontal");
         if(walkSound.isPlaying==false && dx!=0 && isGrounded(feet) && (rb.velocity.x >1 || rb.velocity.x<-1) ) {
             walkSound.PlayDelayed(0.1f);
@@ -52,7 +57,8 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if (gameObject.transform.position.y < -9f){
-            hurtbySpikeSound.Play();
+            if(hurtSound.isPlaying == false)
+                hurtSound.Play();
             gameObject.transform.position = respawnPoint;
             
         }
@@ -65,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Jump(){
+        playerSprite = playerJump;
         jumpSound.Play();
         Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
         rb.velocity = movement;
@@ -96,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy")){
-            hurtbySpikeSound.Play();
+            if(hurtSound.isPlaying == false)
+                hurtSound.Play();
             gameObject.transform.position = respawnPoint;
         }
         if(other.gameObject.CompareTag("Win")){
