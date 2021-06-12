@@ -88,4 +88,10 @@ public class PlayerMovement : MonoBehaviour
         //anim.SetBool("IsDashing", isDashing);
         rb.gravityScale = gravity;
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Enemy")){
+            gameObject.transform.position = respawnPoint;
+        }
+    }
 }
