@@ -18,15 +18,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
+    Vector3 respawnPoint;
 
     
     private void Start() {
-        
+        respawnPoint = gameObject.transform.position;
     }
     private void Update() {
         dx=Input.GetAxisRaw("Horizontal");
-        if(dx!=0 && walkSound.isPlaying == false){
-            walkSound.PlayDelayed(0.05f);
+        if(walkSound.isPlaying==false && dx!=0 && isGrounded(feet) && (rb.velocity.x >1 || rb.velocity.x<-1) ) {
+            walkSound.PlayDelayed(0.1f);
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded(feet) && ( state == 0 || state == 2)){
@@ -46,14 +47,18 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Dash(-1));
             }
         }
+        
+        if (gameObject.transform.position.y < -9f){
+            gameObject.transform.position = respawnPoint;
+        }
     }
     private void FixedUpdate() {
         if (!isDashing){
-            Vector2 movement = new Vector2(dx * movementSpeed, rb.velocity.y);
+            Vector2 movement = new Vector2(dx * movementSpeed , rb.velocity.y);
             rb.velocity = movement;
-            
         }
     }
+
     void Jump(){
         jumpSound.Play();
         Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
