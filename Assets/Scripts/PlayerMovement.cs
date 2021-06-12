@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
+    [SerializeField] private AudioSource hurtbySpikeSound;
     Vector3 respawnPoint;
 
     
@@ -49,7 +50,10 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if (gameObject.transform.position.y < -9f){
+            hurtbySpikeSound.Play();
+            //yield return new WaitForSeconds(0.2f);
             gameObject.transform.position = respawnPoint;
+            
         }
     }
     private void FixedUpdate() {
@@ -91,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy")){
+            hurtbySpikeSound.Play();
             gameObject.transform.position = respawnPoint;
         }
     }
