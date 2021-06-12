@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         
         if (gameObject.transform.position.y < -9f){
             hurtbySpikeSound.Play();
-            //yield return new WaitForSeconds(0.2f);
             gameObject.transform.position = respawnPoint;
             
         }
