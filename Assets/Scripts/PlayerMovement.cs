@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -92,6 +93,9 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy")){
             gameObject.transform.position = respawnPoint;
+        }
+        if(other.gameObject.CompareTag("Win")){
+            SceneManager.LoadScene("Level 2");
         }
     }
 }
