@@ -3119,19 +3119,6 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839792085}
   m_Enabled: 1
-<<<<<<< Updated upstream
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9a21e83adbe4da44eb092eed2a12e703, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &1839792087
-=======
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e688b45bcc6818e44abae2f2f06a67f7, type: 3}
   m_Name: 
@@ -3151,7 +3138,6 @@ Animator:
   hurtSound: {fileID: 1690257370}
   State: 0
 --- !u!82 &1690257367
->>>>>>> Stashed changes
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
