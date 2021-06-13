@@ -641,13 +641,17 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537289318}
-  m_Text: "To Know One's True Self .. Body and Soul .. The Hero must\n\t\t\t\t\tSurpass
-    Trials of Both Entities\n\t\t\tOnly then He can Reveal his True Power"
+  m_Text: 'To Know One''s True Self .. Body and Soul .. The Hero must
+
+    Surpass
+    Trials of Both
+
+    Only then He can Reveal his True Ability'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1.2
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 1
@@ -6318,7 +6322,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   dashDist: 15
-  lvlnum: 5
+  lvlnum: 2
   jumpSound: {fileID: 1994696019}
   dashSound: {fileID: 1994696018}
   walkSound: {fileID: 1994696016}

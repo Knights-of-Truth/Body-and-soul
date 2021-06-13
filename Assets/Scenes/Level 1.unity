@@ -3627,7 +3627,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   dashDist: 15
-  lvlnum: 2
+  lvlnum: 10
   jumpSound: {fileID: 745584753}
   dashSound: {fileID: 745584752}
   walkSound: {fileID: 745584750}
