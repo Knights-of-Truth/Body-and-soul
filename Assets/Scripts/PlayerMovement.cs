@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
     [SerializeField] private AudioSource hurtSound;
+    [SerializeField] private AudioSource diamondSound;
     Vector3 respawnPoint;
     public int State;
 
@@ -136,6 +137,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D other) {
         if(other.gameObject.CompareTag("Transp")){
+
+                diamondSound.Play();
+
             if (State == 0){
                 State = 1;
             }else if (State == 1){
