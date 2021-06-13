@@ -9,6 +9,7 @@ TagManager:
   - Win
   - Music
   - Transp
+  - Transp2
   layers:
   - Default
   - TransparentFX
