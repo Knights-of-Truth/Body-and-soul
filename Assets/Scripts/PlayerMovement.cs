@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayers;
     bool Dashed = false;
     bool isDashing;
-    public int state;
     public float dashDist;
     public string lvlnum;
     [SerializeField] private AudioSource jumpSound;
@@ -22,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource walkSound;
     [SerializeField] private AudioSource hurtSound;
     Vector3 respawnPoint;
-
+    public int State;
 
     
     private void Start() {
@@ -35,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
             walkSound.PlayDelayed(0.1f);
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded(feet) && ( state == 0 || state == 2)){
-            if (state == 0){
+        if (Input.GetButtonDown("Jump") && isGrounded(feet) && ( State == 0 || State == 2)){
+            if (State == 0){
                 jumpForce = 30;
             }
             Jump();
@@ -48,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
             //anim.SetBool("IsRunning", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && ( state == 1 || state == 2)){
-            if (state == 1){
+        if (Input.GetKeyDown(KeyCode.LeftShift) && ( State == 1 || State == 2)){
+            if (State == 1){
                 dashDist = 20;
             }
             if (dx > 0 && !Dashed){
@@ -102,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
         //anim.SetBool("IsDashing", isDashing);
         rb.gravityScale = gravity;
     }
-
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy")){
             if(hurtSound.isPlaying == false)
@@ -112,5 +110,12 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Win")){
             SceneManager.LoadScene("Level "+ lvlnum);
         }
+        if(other.gameObject.CompareTag("Transp")){
+            if (State == 0){
+                State = 1;
+            }else if (State == 1){
+                State = 0;
+            }
+    }
     }
 }
