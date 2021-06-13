@@ -782,7 +782,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.8, y: 1.1}
     newSize: {x: 0.9411765, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1576,21 +1576,21 @@ CompositeCollider2D:
       - X: 40000000
         Y: -30000000
     - - X: 90000100
-        Y: -60000041
+        Y: -70000041
       - X: 90000100
-        Y: -49999959
+        Y: -59999959
       - X: 90000041
-        Y: -49999900
+        Y: -59999900
       - X: 79999959
-        Y: -49999900
+        Y: -59999900
       - X: 79999900
-        Y: -49999959
+        Y: -59999959
       - X: 79999900
-        Y: -60000041
+        Y: -70000041
       - X: 79999959
-        Y: -60000100
+        Y: -70000100
       - X: 90000041
-        Y: -60000100
+        Y: -70000100
     - - X: -80000000
         Y: -60000000
       - X: -79444448
@@ -1703,10 +1703,10 @@ CompositeCollider2D:
       - {x: 3.999971, y: -2}
       - {x: 3, y: -2.0000293}
       - {x: 3.0000293, y: -3}
-    - - {x: 8.999974, y: -6.00001}
-      - {x: 8.999974, y: -4.99999}
-      - {x: 7.9999905, y: -5.0000253}
-      - {x: 8.000026, y: -6.00001}
+    - - {x: 8.999974, y: -7.0000095}
+      - {x: 8.999974, y: -5.99999}
+      - {x: 7.9999905, y: -6.0000253}
+      - {x: 8.000026, y: -7.0000095}
     - - {x: -7.9999385, y: -6.055494}
       - {x: -7.9999704, y: -6}
       - {x: -7.9445066, y: -6.0000615}
@@ -2398,6 +2398,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 8, y: -7, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 9
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -16, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -2549,16 +2559,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 5, y: -6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 9
-      m_TileSpriteIndex: 9
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 8, y: -6, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 9
