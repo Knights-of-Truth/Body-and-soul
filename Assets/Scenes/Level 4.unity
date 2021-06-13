@@ -5614,7 +5614,6 @@ GameObject:
   - component: {fileID: 1790113284}
   - component: {fileID: 1790113288}
   - component: {fileID: 1790113287}
-  - component: {fileID: 1790113286}
   - component: {fileID: 1790113285}
   m_Layer: 0
   m_Name: Transporter
@@ -5653,18 +5652,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &1790113286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790113283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75b3bb4574514fb4d96e4cb00bef5e60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!483693784 &1790113287
 TilemapRenderer:
   m_ObjectHideFlags: 0
