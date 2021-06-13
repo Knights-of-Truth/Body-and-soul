@@ -6336,6 +6336,7 @@ GameObject:
   - component: {fileID: 1422709455}
   - component: {fileID: 1422709454}
   - component: {fileID: 1422709453}
+  - component: {fileID: 1422709456}
   m_Layer: 0
   m_Name: my text
   m_TagString: Untagged
@@ -6421,6 +6422,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422709456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422709452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e2cc33f10539c43a544d11d245a460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMesh: {fileID: 1422709453}
+  textTime: 5
 --- !u!1 &1559112681
 GameObject:
   m_ObjectHideFlags: 0

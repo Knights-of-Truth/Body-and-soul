@@ -29,6 +29,13 @@ public class PlayerMovement : MonoBehaviour
         respawnPoint = gameObject.transform.position;
     }
     private void Update() {
+
+
+        if (Input.GetKeyDown(KeyCode.R)){
+            gameObject.transform.position = respawnPoint;
+        }
+
+
         dx=Input.GetAxisRaw("Horizontal");
         if(walkSound.isPlaying==false && dx!=0 && isGrounded(feet) && (rb.velocity.x >1 || rb.velocity.x<-1) ) {
             walkSound.PlayDelayed(0.1f);
