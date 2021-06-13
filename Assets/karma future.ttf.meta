@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f7c50e682cf54e4baf66a8cc518d945
+guid: 902aadbd8ccbaf94688b427465abdc9e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Ghost Clan
+  - Karma
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
