@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Animator anim2;
-    public Animator anim1;
-    public Animator anim0;
+    public Animator anim;
     public float movementSpeed;
     public Rigidbody2D rb;
     float dx;
@@ -44,13 +42,9 @@ public class PlayerMovement : MonoBehaviour
             }
         
         if (Mathf.Abs(dx) > 0.05f){
-            if (State == 0){anim0.SetBool("IsRunning", true);}
-            if (State == 1){anim1.SetBool("IsRunning", true);}
-            if (State == 2){anim2.SetBool("IsRunning", true);}
+            anim.SetBool("IsRunning", true);
         }else{
-            if (State == 0){anim0.SetBool("IsRunning", false);}
-            if (State == 1){anim1.SetBool("IsRunning", false);}
-            if (State == 2){anim2.SetBool("IsRunning", false);}
+            anim.SetBool("IsRunning", false);
         }
 
         if (dx > 0){
@@ -77,9 +71,8 @@ public class PlayerMovement : MonoBehaviour
             gameObject.transform.position = respawnPoint;
             
         }
-        if (State == 0){anim0.SetBool("IsGrounded", isGrounded(feet));}
-        if (State == 1){anim1.SetBool("IsGrounded", isGrounded(feet));}
-        if (State == 2){anim2.SetBool("IsGrounded", isGrounded(feet));}
+        anim.SetInteger("state", State);
+        anim.SetBool("IsGrounded", isGrounded(feet));
     }
     private void FixedUpdate() {
         if (!isDashing){

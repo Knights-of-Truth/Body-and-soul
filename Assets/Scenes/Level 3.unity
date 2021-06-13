@@ -3564,63 +3564,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!1001 &308426492
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 955081092793114335, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_Name
-      value: zombie_idle
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -17.016472
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.308845
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1330264934623882378, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
 --- !u!1 &339036811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,7 +3689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -4271,9 +4214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e688b45bcc6818e44abae2f2f06a67f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim2: {fileID: 680326189}
-  anim1: {fileID: 1744469817}
-  anim0: {fileID: 0}
+  anim: {fileID: 0}
   movementSpeed: 10
   rb: {fileID: 680326195}
   jumpForce: 20
@@ -4400,7 +4341,7 @@ Transform:
   m_Children:
   - {fileID: 816189900}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816189899
 GameObject:
@@ -5025,7 +4966,7 @@ Transform:
   m_LocalScale: {x: 28.187847, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1515689126
 BoxCollider2D:
@@ -5650,11 +5591,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!95 &1744469817 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4634252783317042854, guid: 97a6fb0f4e897004393f28b376f763ab, type: 3}
-  m_PrefabInstance: {fileID: 308426492}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2062817511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5701,7 +5637,7 @@ Transform:
   - {fileID: 1630735861}
   - {fileID: 1150744312}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113633822
 GameObject:
@@ -5784,5 +5720,5 @@ Transform:
   m_LocalScale: {x: 3.991, y: 2.3517, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
