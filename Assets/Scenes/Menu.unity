@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Adventures of a Random Guy
+  m_text: Body and Soul
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30fdf63ecad95ed47b50408d7131e7a7, type: 2}
   m_sharedMaterial: {fileID: -137544363661818128, guid: 30fdf63ecad95ed47b50408d7131e7a7, type: 2}
