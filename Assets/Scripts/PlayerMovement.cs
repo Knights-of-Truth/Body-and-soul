@@ -22,9 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource walkSound;
     [SerializeField] private AudioSource hurtSound;
     Vector3 respawnPoint;
-    private Sprite playerSprite;
 
-    public Sprite playerJump;
 
     
     private void Start() {
@@ -32,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
         respawnPoint = gameObject.transform.position;
     }
     private void Update() {
-        playerSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
         dx=Input.GetAxisRaw("Horizontal");
         if(walkSound.isPlaying==false && dx!=0 && isGrounded(feet) && (rb.velocity.x >1 || rb.velocity.x<-1) ) {
             walkSound.PlayDelayed(0.1f);
@@ -77,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Jump(){
-        playerSprite = playerJump;
         jumpSound.Play();
         Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
         rb.velocity = movement;
