@@ -3085,58 +3085,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1839792085
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1839792095}
-  - component: {fileID: 1839792094}
-  - component: {fileID: 1839792093}
-  - component: {fileID: 1839792092}
-  - component: {fileID: 1839792091}
-  - component: {fileID: 1839792090}
-  - component: {fileID: 1839792089}
-  - component: {fileID: 1839792088}
-  - component: {fileID: 1839792087}
-  - component: {fileID: 1839792086}
-  m_Layer: 0
-  m_Name: Hero
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &1839792086
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839792085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e688b45bcc6818e44abae2f2f06a67f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  rb: {fileID: 1690257362}
-  jumpForce: 30
-  feet: {fileID: 1058227957}
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  dashDist: 15
-  lvlnum: 3
-  jumpSound: {fileID: 1690257367}
-  dashSound: {fileID: 1690257368}
-  walkSound: {fileID: 1690257369}
-  hurtSound: {fileID: 1690257370}
-  State: 0
 --- !u!82 &1690257367
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3233,6 +3181,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1839792085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1839792095}
+  - component: {fileID: 1839792094}
+  - component: {fileID: 1839792093}
+  - component: {fileID: 1839792092}
+  - component: {fileID: 1839792091}
+  - component: {fileID: 1839792090}
+  - component: {fileID: 1839792089}
+  - component: {fileID: 1839792088}
+  - component: {fileID: 1839792086}
+  - component: {fileID: 1690257367}
+  m_Layer: 0
+  m_Name: Hero
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1839792086
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839792085}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &1839792088
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3533,9 +3525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e688b45bcc6818e44abae2f2f06a67f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim2: {fileID: 0}
-  anim1: {fileID: 0}
-  anim0: {fileID: 0}
+  anim: {fileID: 1839792086}
   movementSpeed: 10
   rb: {fileID: 1839792092}
   jumpForce: 20
@@ -3547,7 +3537,7 @@ MonoBehaviour:
   lvlnum: 3
   jumpSound: {fileID: 1839792090}
   dashSound: {fileID: 1839792089}
-  walkSound: {fileID: 1839792087}
+  walkSound: {fileID: 0}
   hurtSound: {fileID: 1839792088}
   State: 0
 --- !u!50 &1839792092
