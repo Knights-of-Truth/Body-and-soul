@@ -37,9 +37,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded(feet) && ( State == 0 || State == 2)){
             if (State == 0){
                 jumpForce = 30;
+            }else if (State == 2){
+                jumpForce = 20;
             }
             Jump();
             }
+        if (Input.GetKeyDown("q")){
+            if (State == 1){
+                State = 0;
+            }else if (State == 0){
+                State = 1;
+            }
+        }
         
         if (Mathf.Abs(dx) > 0.05f){
             anim.SetBool("IsRunning", true);
@@ -57,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && ( State == 1 || State == 2)){
             if (State == 1){
                 dashDist = 20;
-            }
+            }else if (State == 2){dashDist = 15;}
             if (dx > 0 && !Dashed){
                 StartCoroutine(Dash(1));
             }else if (!Dashed){
@@ -117,12 +126,23 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Win")){
             SceneManager.LoadScene("Level "+ lvlnum);
         }
+    }
+    private void OnCollisionExit2D(Collision2D other) {
         if(other.gameObject.CompareTag("Transp")){
             if (State == 0){
                 State = 1;
             }else if (State == 1){
                 State = 0;
             }
+        }
     }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Transp2")){
+            if (State != 2){
+                State = 2;
+            }else{
+                State = 0;
+            }
+        }
     }
 }
