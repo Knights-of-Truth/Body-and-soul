@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Animator anim;
+    public Animator anim2;
+    public Animator anim1;
+    public Animator anim0;
     public float movementSpeed;
     public Rigidbody2D rb;
     float dx;
@@ -42,9 +44,13 @@ public class PlayerMovement : MonoBehaviour
             }
         
         if (Mathf.Abs(dx) > 0.05f){
-            anim.SetBool("IsRunning", true);
+            if (State == 0){anim0.SetBool("IsRunning", true);}
+            if (State == 1){anim1.SetBool("IsRunning", true);}
+            if (State == 2){anim2.SetBool("IsRunning", true);}
         }else{
-            anim.SetBool("IsRunning", false);
+            if (State == 0){anim0.SetBool("IsRunning", false);}
+            if (State == 1){anim1.SetBool("IsRunning", false);}
+            if (State == 2){anim2.SetBool("IsRunning", false);}
         }
 
         if (dx > 0){
@@ -71,7 +77,9 @@ public class PlayerMovement : MonoBehaviour
             gameObject.transform.position = respawnPoint;
             
         }
-        anim.SetBool("IsGrounded", isGrounded(feet));
+        if (State == 0){anim0.SetBool("IsGrounded", isGrounded(feet));}
+        if (State == 1){anim1.SetBool("IsGrounded", isGrounded(feet));}
+        if (State == 2){anim2.SetBool("IsGrounded", isGrounded(feet));}
     }
     private void FixedUpdate() {
         if (!isDashing){
@@ -99,14 +107,12 @@ public class PlayerMovement : MonoBehaviour
         dashSound.Play();
         isDashing = true;
         Dashed = true;
-        //anim.SetBool("IsDashing", isDashing);
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         rb.AddForce(new Vector2(dashDist * direction, 0f), ForceMode2D.Impulse);
         float gravity = rb.gravityScale;
         rb.gravityScale = 0;
         yield return new WaitForSeconds(0.2f);
         isDashing = false;
-        //anim.SetBool("IsDashing", isDashing);
         rb.gravityScale = gravity;
     }
     private void OnCollisionEnter2D(Collision2D other) {

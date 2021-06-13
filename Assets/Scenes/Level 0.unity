@@ -2836,7 +2836,7 @@ MonoBehaviour:
   dashSound: {fileID: 654079907}
   walkSound: {fileID: 654079905}
   hurtSound: {fileID: 654079906}
-  State: 0
+  State: 2
 --- !u!50 &654079910
 Rigidbody2D:
   serializedVersion: 4
