@@ -10,6 +10,7 @@ TagManager:
   - Music
   - Transp
   - Transp2
+  - TEST
   layers:
   - Default
   - TransparentFX
