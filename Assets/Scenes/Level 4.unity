@@ -6533,7 +6533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1422709453}
-  textTime: 5
+  textTime: 40
 --- !u!1 &1559112681
 GameObject:
   m_ObjectHideFlags: 0
