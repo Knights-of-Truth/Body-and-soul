@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
         respawnPoint = gameObject.transform.position;
     }
     private void Update() {
+        
+        if (Input.GetKey(KeyCode.Escape)){
+            Application.Quit();
+        }
 
 
         if (Input.GetKeyDown(KeyCode.R)){
@@ -77,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             }else if (State == 2){dashDist = 15;}
             if (dx > 0 && !Dashed){
                 StartCoroutine(Dash(1));
-            }else if (!Dashed){
+            }else if (dx < 0 && !Dashed){
                 StartCoroutine(Dash(-1));
             }
         }
@@ -134,8 +138,6 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Win")){
             SceneManager.LoadScene("Level "+ lvlnum);
         }
-    }
-    private void OnCollisionExit2D(Collision2D other) {
         if(other.gameObject.CompareTag("Transp")){
 
                 diamondSound.Play();

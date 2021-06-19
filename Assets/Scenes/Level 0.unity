@@ -173,7 +173,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138703016}
-  m_Text: "Move with A D\n\tJump with Space \n\t\tDash with Shift"
+  m_Text: "Move with A D\n\tJump with Space \n\t\tDash with Shift\n\t\t\tR to Restart"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.4, y: 7}
+  m_AnchoredPosition: {x: -1.86, y: 8.26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &227377944
@@ -2961,6 +2961,7 @@ MonoBehaviour:
   dashSound: {fileID: 654079907}
   walkSound: {fileID: 654079905}
   hurtSound: {fileID: 654079906}
+  diamondSound: {fileID: 0}
   State: 2
 --- !u!50 &654079910
 Rigidbody2D:

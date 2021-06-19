@@ -5826,7 +5826,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.044143807, g: 0.17504963, b: 0.3773585, a: 0}
+  m_BackGroundColor: {r: 0.027634388, g: 0.103373095, b: 0.21698111, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -6327,6 +6327,7 @@ MonoBehaviour:
   dashSound: {fileID: 1994696018}
   walkSound: {fileID: 1994696016}
   hurtSound: {fileID: 1994696017}
+  diamondSound: {fileID: 0}
   State: 0
 --- !u!50 &1994696021
 Rigidbody2D:

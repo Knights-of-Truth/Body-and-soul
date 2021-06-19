@@ -7,7 +7,7 @@ public class LastScript : MonoBehaviour
 {
        void Update()
     {
-        if (Input.anyKeyDown){
+        if (Input.GetKey(KeyCode.Escape)){
             Application.Quit();
         }
     }
