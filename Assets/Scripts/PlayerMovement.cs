@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     bool Dashed = false;
     bool isDashing;
     public float dashDist;
-    public string lvlnum;
+    public int lvlnum;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
@@ -23,12 +23,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource diamondSound;
     Vector3 respawnPoint;
     public int State;
-
-    
-    private void Start() {
-        
-        respawnPoint = gameObject.transform.position;
-    }
     private void Update() {
         
         if (Input.GetKey(KeyCode.Escape)){
@@ -37,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.R)){
-            gameObject.transform.position = respawnPoint;
+            SceneManager.LoadScene("Level "+ (lvlnum -1));
         }
 
 
@@ -133,7 +127,8 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
             if(hurtSound.isPlaying == false)
                 hurtSound.Play();
-            gameObject.transform.position = respawnPoint;
+            SceneManager.LoadScene("Level "+ (lvlnum -1));
+            
         }
         if(other.gameObject.CompareTag("Win")){
             SceneManager.LoadScene("Level "+ lvlnum);
