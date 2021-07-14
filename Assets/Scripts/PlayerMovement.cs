@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     bool Dashed = false;
     bool isDashing;
     public float dashDist;
-    public int lvlnum;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
@@ -23,15 +21,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource diamondSound;
     Vector3 respawnPoint;
     public int State;
+    public LevelLoader _lv;
     private void Update() {
         
         if (Input.GetKey(KeyCode.Escape)){
             Application.Quit();
         }
 
-
         if (Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene("Level "+ (lvlnum -1));
+           _lv.ReloadLevel();
         }
 
 
@@ -81,9 +79,9 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if (gameObject.transform.position.y < -9f){
-            if(hurtSound.isPlaying == false)
+            if(!hurtSound.isPlaying)
                 hurtSound.Play();
-            gameObject.transform.position = respawnPoint;
+             _lv.ReloadLevel();
             
         }
         anim.SetInteger("state", State);
@@ -127,11 +125,12 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
             if(hurtSound.isPlaying == false)
                 hurtSound.Play();
-            SceneManager.LoadScene("Level "+ (lvlnum -1));
+            _lv.ReloadLevel();
             
         }
         if(other.gameObject.CompareTag("Win")){
-            SceneManager.LoadScene("Level "+ lvlnum);
+            
+            _lv.LoadNextLevel();
         }
         if(other.gameObject.CompareTag("Transp")){
 
