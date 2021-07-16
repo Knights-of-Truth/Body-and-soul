@@ -674,8 +674,9 @@ MonoBehaviour:
   walkSound: {fileID: 58663657}
   hurtSound: {fileID: 58663658}
   diamondSound: {fileID: 58663655}
+  bounceSound: {fileID: 0}
   State: 0
-  _lv: {fileID: 943178854}
+  _lv: {fileID: 901361325}
 --- !u!50 &58663662
 Rigidbody2D:
   serializedVersion: 4
@@ -4936,13 +4937,61 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &943178853
+--- !u!1001 &901361324
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 720
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1050
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407549214886657169, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785552774092379673, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8307114756553488031, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
       propertyPath: m_Name
       value: LevelLoader
@@ -4993,10 +5042,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
---- !u!114 &943178854 stripped
+--- !u!114 &901361325 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2148974091916910566, guid: d46f0dca1d8c0694d82ef0b8f9b81a72, type: 3}
-  m_PrefabInstance: {fileID: 943178853}
+  m_PrefabInstance: {fileID: 901361324}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

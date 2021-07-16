@@ -11,6 +11,7 @@ TagManager:
   - Transp
   - Transp2
   - TEST
+  - Jumper
   layers:
   - Default
   - TransparentFX

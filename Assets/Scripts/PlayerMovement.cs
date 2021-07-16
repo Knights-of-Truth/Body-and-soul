@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public int State;
     public Animator anim;
+    public LevelLoader _lv;
+
+    [Header("Movement")]
     public float movementSpeed;
     public Rigidbody2D rb;
     float dx;
@@ -14,14 +18,15 @@ public class PlayerMovement : MonoBehaviour
     bool Dashed = false;
     bool isDashing;
     public float dashDist;
+    [Header("Sounds")]
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource dashSound;
     [SerializeField] private AudioSource walkSound;
     [SerializeField] private AudioSource hurtSound;
     [SerializeField] private AudioSource diamondSound;
-    Vector3 respawnPoint;
-    public int State;
-    public LevelLoader _lv;
+    [SerializeField] private AudioSource bounceSound;
+
+    private bool dir = true;
     private void Update() {
         
         if (Input.GetKey(KeyCode.Escape)){
@@ -34,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         dx=Input.GetAxisRaw("Horizontal");
+       
+
         if(walkSound.isPlaying==false && dx!=0 && isGrounded(feet) && (rb.velocity.x >1 || rb.velocity.x<-1) ) {
             walkSound.PlayDelayed(0.1f);
         }
@@ -45,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
                 jumpForce = 20;
             }
             Jump();
-            }
+        }
         if (Input.GetKeyDown("q")){
             if (State == 1){
                 State = 0;
@@ -62,8 +69,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (dx > 0){
             transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+            dir = true;
         }else if (dx < 0){
             transform.localScale = new Vector3(-1.5f, 1.5f, 1f);
+            dir = false;
         }
 
 
@@ -71,16 +80,20 @@ public class PlayerMovement : MonoBehaviour
             if (State == 1){
                 dashDist = 20;
             }else if (State == 2){dashDist = 15;}
-            if (dx > 0 && !Dashed){
+            if (dir && !Dashed){
                 StartCoroutine(Dash(1));
-            }else if (dx < 0 && !Dashed){
+            }else if (!dir && !Dashed){
                 StartCoroutine(Dash(-1));
             }
+
+            
         }
         
         if (gameObject.transform.position.y < -9f){
-            if(!hurtSound.isPlaying)
+            if(hurtSound.isPlaying == false){
                 hurtSound.Play();
+                Destroy(gameObject,0.2f);
+            }
              _lv.ReloadLevel();
             
         }
@@ -123,13 +136,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.CompareTag("Enemy")){
-            if(hurtSound.isPlaying == false)
+            if(!hurtSound.isPlaying)
                 hurtSound.Play();
+            Destroy(gameObject, 0.2f);
             _lv.ReloadLevel();
             
         }
         if(other.gameObject.CompareTag("Win")){
-            
             _lv.LoadNextLevel();
         }
         if(other.gameObject.CompareTag("Transp")){
@@ -151,5 +164,12 @@ public class PlayerMovement : MonoBehaviour
                 State = 0;
             }
         }
+    
+        if (other.gameObject.CompareTag("Jumper")){
+            if(!bounceSound.isPlaying)
+                bounceSound.Play();
+            rb.velocity = new Vector2(rb.velocity.x, 30);
+         }
     }
+
 }
