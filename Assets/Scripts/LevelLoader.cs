@@ -9,15 +9,17 @@ public class LevelLoader : MonoBehaviour
     
     public Animator transition;
     public float transitionTime = 1f;
+    public int levelIndexData;
 
     public void LoadNextLevel(){
-
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-        
+        levelIndexData = SceneManager.GetActiveScene().buildIndex + 1;
+        SaveSystem.savePlayer(this);
+        StartCoroutine(LoadLevel(levelIndexData));
     }
     
     IEnumerator LoadLevel(int levelIndex){
 
+        
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
@@ -26,10 +28,19 @@ public class LevelLoader : MonoBehaviour
 
     }
 
-
     public void ReloadLevel(){
 
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+    }
+
+    public void loadFromSave(){
+            PlayerData data = SaveSystem.LoadPlayer();
+            levelIndexData = data.level;
+            if(levelIndexData == 11){
+                levelIndexData = 1;
+            }
+            StartCoroutine(LoadLevel(levelIndexData));
+        
     }
 
 }
