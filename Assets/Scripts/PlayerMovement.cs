@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             }
             Jump();
         }
-        if (Input.GetKeyDown("q")){
+        if (Input.GetKeyDown("k")){
             if (State == 1){
                 State = 0;
             }else if (State == 0){
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if (gameObject.transform.position.y < -9f){
-            if(hurtSound.isPlaying == false){
+            if(!hurtSound.isPlaying){
                 hurtSound.Play();
                 Destroy(gameObject,0.2f);
             }
@@ -138,25 +138,27 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
             if(!hurtSound.isPlaying)
                 hurtSound.Play();
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
             Destroy(gameObject, 0.2f);
             _lv.ReloadLevel();
             
         }
         if(other.gameObject.CompareTag("Win")){
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
             _lv.LoadNextLevel();
         }
         if(other.gameObject.CompareTag("Transp")){
-
                 diamondSound.Play();
-
             if (State == 0){
                 State = 1;
             }else if (State == 1){
                 State = 0;
             }
         }
+        
     }
     private void OnTriggerEnter2D(Collider2D other) {
+        
         if (other.gameObject.CompareTag("Transp2")){
             if (State != 2){
                 State = 2;
@@ -166,7 +168,6 @@ public class PlayerMovement : MonoBehaviour
         }
     
         if (other.gameObject.CompareTag("Jumper")){
-            if(!bounceSound.isPlaying)
                 bounceSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, 30);
          }

@@ -39,7 +39,8 @@ public class LevelLoader : MonoBehaviour
             if(levelIndexData == 11){
                 levelIndexData = 1;
             }
-            StartCoroutine(LoadLevel(levelIndexData));
+            if(levelIndexData != 1)
+                StartCoroutine(LoadLevel(levelIndexData));
         
     }
 
