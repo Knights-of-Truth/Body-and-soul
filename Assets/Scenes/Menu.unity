@@ -1336,9 +1336,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMusic:
-  - {fileID: 8300000, guid: 0467cbb29e30cde41af09b210fe03cad, type: 3}
+  - {fileID: 8300000, guid: cee416cfc4ef06a4092947c1b03e863b, type: 3}
   - {fileID: 8300000, guid: a34ab12c684b061409286c6761fa8a69, type: 3}
   - {fileID: 8300000, guid: 7e7657f6a57706c468242ad5a69d24e7, type: 3}
+  - {fileID: 8300000, guid: 0467cbb29e30cde41af09b210fe03cad, type: 3}
 --- !u!82 &1168857699
 AudioSource:
   m_ObjectHideFlags: 0

@@ -36,11 +36,10 @@ public class LevelLoader : MonoBehaviour
     public void loadFromSave(){
             PlayerData data = SaveSystem.LoadPlayer();
             levelIndexData = data.level;
-            if(levelIndexData == 11){
+            if(levelIndexData >= 13 || levelIndexData<=0){
                 levelIndexData = 1;
-            }
-            if(levelIndexData != 1)
-                StartCoroutine(LoadLevel(levelIndexData));
+            }    
+            StartCoroutine(LoadLevel(levelIndexData));
         
     }
 
