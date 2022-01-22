@@ -28,12 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool dir = true;
     private void Update() {
-        
-        if (Input.GetKey(KeyCode.Escape)){
-            Application.Quit();
-        }
 
-        if (Input.GetKeyDown(KeyCode.R)){
+        if (!PauseMenu.GameIsPaused && Input.GetKeyDown(KeyCode.R)){
            _lv.ReloadLevel();
         }
 
@@ -45,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             walkSound.PlayDelayed(0.1f);
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded(feet) && ( State == 0 || State == 2)){
+        if (!PauseMenu.GameIsPaused && Input.GetButtonDown("Jump") && isGrounded(feet) && ( State == 0 || State == 2)){
             if (State == 0){
                 jumpForce = 30;
             }else if (State == 2){
@@ -53,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             }
             Jump();
         }
-        if (Input.GetKeyDown("k")){
+        if (!PauseMenu.GameIsPaused && Input.GetKeyDown("k")){
             if (State == 1){
                 State = 0;
             }else if (State == 0){
@@ -63,11 +59,13 @@ public class PlayerMovement : MonoBehaviour
         
         if (Mathf.Abs(dx) > 0.05f){
             anim.SetBool("IsRunning", true);
+            
         }else{
             anim.SetBool("IsRunning", false);
         }
 
         if (dx > 0){
+            
             transform.localScale = new Vector3(1.5f, 1.5f, 1f);
             dir = true;
         }else if (dx < 0){
@@ -76,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && ( State == 1 || State == 2)){
+        if (!PauseMenu.GameIsPaused && Input.GetKeyDown(KeyCode.LeftShift) && ( State == 1 || State == 2)){
             if (State == 1){
                 dashDist = 20;
             }else if (State == 2){dashDist = 15;}
@@ -134,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
         rb.gravityScale = gravity;
     }
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnCollisionEnter2D(Collision2D other) { //TODO
         if(other.gameObject.CompareTag("Enemy")){
             if(!hurtSound.isPlaying)
                 hurtSound.Play();
@@ -143,6 +141,15 @@ public class PlayerMovement : MonoBehaviour
             _lv.ReloadLevel();
             
         }
+        // if(other.gameObject.CompareTag("Boss")){
+        //     yield return new WaitForSeconds(0.5f);
+        //     if(!hurtSound.isPlaying)
+        //         hurtSound.Play();
+        //     rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        //     Destroy(gameObject, 0.2f);
+        //     _lv.ReloadLevel();
+            
+        // }
         if(other.gameObject.CompareTag("Win")){
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             _lv.LoadNextLevel();

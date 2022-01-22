@@ -1,11 +1,12 @@
  using UnityEngine;
+ using UnityEngine.UI;
  
  public class MusicClass : MonoBehaviour
  {
-     public Object[] myMusic; // declare this as Object array
-     private int i;
-     private bool paused = false;
-     AudioSource _audioSource;
+    public Object[] myMusic; // declare this as Object array
+    private int i;
+    AudioSource _audioSource;
+    public Sprite on;
      
      void Awake () {
          DontDestroyOnLoad(transform.gameObject);
@@ -15,30 +16,30 @@
      
      void Start (){
         _audioSource.Play(); 
+        
      }
      void Update () {
-        if((!_audioSource.isPlaying && !paused) || Input.GetKeyDown(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.M))
           playnextSong();
-        if(Input.GetKeyDown(KeyCode.P)){
-            if(_audioSource.isPlaying){
-                paused = true;
-                _audioSource.Pause();
-            }
-            else{
-                _audioSource.UnPause();
-                paused = false;
-            }
-        }
-
+        
      }
-     
      void playnextSong() {
+         PauseMenu.PM.onn();
+
          i++;
          if(i == myMusic.Length){
              i=0;
          }
+
         _audioSource.clip = myMusic[i] as AudioClip;
         _audioSource.Play();
-     }
- 
+        
+        Invoke("check", _audioSource.clip.length-1);
+
+        }
+        void check(){
+           if(PauseMenu.PM.bolo){
+              Invoke("playnextSong", 1);
+           }
+        }
  }

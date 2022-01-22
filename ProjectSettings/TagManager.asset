@@ -12,6 +12,7 @@ TagManager:
   - Transp2
   - TEST
   - Jumper
+  - Boss
   layers:
   - Default
   - TransparentFX
