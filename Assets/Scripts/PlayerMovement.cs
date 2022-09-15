@@ -27,6 +27,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource bounceSound;
 
     private bool dir = true;
+    float freezeTime = 0f;
+    RigidbodyConstraints2D originalConstraints;
+    private void Start() {
+        originalConstraints = rb.constraints;
+    }
     private void Update() {
 
         if (!PauseMenu.GameIsPaused && Input.GetKeyDown(KeyCode.R)){
@@ -97,6 +102,13 @@ public class PlayerMovement : MonoBehaviour
         }
         anim.SetInteger("state", State);
         anim.SetBool("IsGrounded", isGrounded(feet));
+
+        if(freezeTime < 0.7f){
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            freezeTime += Time.fixedDeltaTime;
+        }
+        else
+            rb.constraints = originalConstraints;
     }
     private void FixedUpdate() {
         if (!isDashing){
@@ -161,6 +173,7 @@ public class PlayerMovement : MonoBehaviour
             }else if (State == 1){
                 State = 0;
             }
+            freezeTime = 0f;
         }
         
     }

@@ -564,6 +564,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -573,8 +574,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -4430,6 +4431,187 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      tiles_packed_86: -1036538399751949073
+      tiles_packed_135: 3281618818311424653
+      tiles_packed_62: -580426956490665432
+      tiles_packed_60: 8075902851256106815
+      tiles_packed_58: -1018282775519857238
+      tiles_packed_151: -3672152384597243850
+      tiles_packed_24: -6979415041820946195
+      tiles_packed_23: 1331949160170579244
+      tiles_packed_35: 3709371895957944285
+      tiles_packed_30: 106231971251999270
+      tiles_packed_31: -8982877743575154664
+      tiles_packed_134: -2158395620115732055
+      tiles_packed_164: 3886902937245069692
+      tiles_packed_69: 1351400404992081645
+      tiles_packed_1: -5099891286554169108
+      tiles_packed_59: -6922838963273643089
+      tiles_packed_100: 2032021735281516063
+      tiles_packed_112: -543251549272085122
+      tiles_packed_124: -8615463281123565709
+      tiles_packed_0: -6468341902652231549
+      tiles_packed_77: 1162698605077188136
+      tiles_packed_118: -4110108698703344041
+      tiles_packed_173: -5296676356386176766
+      tiles_packed_27: -8253841058628617512
+      tiles_packed_54: -554409727408420216
+      tiles_packed_156: -1835625035961846769
+      tiles_packed_33: 2231158771471208614
+      tiles_packed_175: 3709418801573461372
+      tiles_packed_176: -4058421886511714872
+      tiles_packed_91: -9004804624529026027
+      tiles_packed_21: -1016387791610636912
+      tiles_packed_153: -3454064373187976199
+      tiles_packed_2: 8885387894147674855
+      tiles_packed_165: -2585773380964948478
+      tiles_packed_46: -1958049112790141564
+      tiles_packed_159: 8681881381698386880
+      tiles_packed_174: -1236476377336234667
+      tiles_packed_37: 5929101164051957955
+      tiles_packed_120: -6759129443739563915
+      tiles_packed_53: -3902594593330400008
+      tiles_packed_179: 6436556184545528601
+      tiles_packed_139: 6144481779580734573
+      tiles_packed_19: 582793467155048136
+      tiles_packed_136: -5134717754124482815
+      tiles_packed_109: -7604293769985498233
+      tiles_packed_72: 2158419240370885959
+      tiles_packed_126: 2527338778565707677
+      tiles_packed_25: -809894152159824698
+      tiles_packed_115: 1144186736177948058
+      tiles_packed_42: -6281357792470137657
+      tiles_packed_168: 4060961311878240386
+      tiles_packed_97: 2519150110462324888
+      tiles_packed_92: 8913817147713902787
+      tiles_packed_14: -6635838620655032488
+      tiles_packed_88: 489706046120239345
+      tiles_packed_161: -5768133326542575600
+      tiles_packed_149: 945645363445787622
+      tiles_packed_10: 375764007306900435
+      tiles_packed_16: -8907651678591178445
+      tiles_packed_63: -7484301175619072536
+      tiles_packed_22: -1464467535388251667
+      tiles_packed_154: 6305451015045270709
+      tiles_packed_8: -925687403837109742
+      tiles_packed_41: 1161618301327373649
+      tiles_packed_141: -5513116068031122696
+      tiles_packed_148: 8228397423128438550
+      tiles_packed_9: 855748642312981814
+      tiles_packed_74: -1769515117089272870
+      tiles_packed_81: -3452664018028135181
+      tiles_packed_146: 5233299816743645569
+      tiles_packed_13: -478249947516784794
+      tiles_packed_104: 2399628295308777574
+      tiles_packed_144: -3381291646954615612
+      tiles_packed_143: -8065941293409737702
+      tiles_packed_20: 6768717979492401898
+      tiles_packed_90: -8232667578721325163
+      tiles_packed_152: -7996530012942899644
+      tiles_packed_116: -4760040529980717837
+      tiles_packed_47: -544273565699887945
+      tiles_packed_102: -2369916749865654140
+      tiles_packed_158: -2003761952095726608
+      tiles_packed_4: 7952910389982072991
+      tiles_packed_6: -6771995730415133760
+      tiles_packed_113: -1796103179321303113
+      tiles_packed_82: -1798430998968732149
+      tiles_packed_147: -240547440891338950
+      tiles_packed_122: 9068382350983968614
+      tiles_packed_29: -3916521456390843289
+      tiles_packed_127: -6929711954619532383
+      tiles_packed_40: 8012677903426701907
+      tiles_packed_163: 3241697884491065006
+      tiles_packed_48: -9074155080181524437
+      tiles_packed_101: 5195708313828997031
+      tiles_packed_111: 5299713128573863535
+      tiles_packed_49: 7791077683122748147
+      tiles_packed_17: -1934568145699042145
+      tiles_packed_125: 2927994321195925395
+      tiles_packed_71: 8125909643449977183
+      tiles_packed_51: -3577908947729757615
+      tiles_packed_93: -5003187829199356784
+      tiles_packed_18: -2955433597414751084
+      tiles_packed_85: 4945364218985679397
+      tiles_packed_99: 4611377300379539743
+      tiles_packed_66: -698260017585225565
+      tiles_packed_128: 3036449295346756647
+      tiles_packed_105: 8845483427560669872
+      tiles_packed_110: 4076533793238422527
+      tiles_packed_132: -756352802866734772
+      tiles_packed_87: -3188333340418472691
+      tiles_packed_52: 7873254353363049688
+      tiles_packed_11: -319623969863513368
+      tiles_packed_56: 1759987528946116931
+      tiles_packed_130: -9056281201623339937
+      tiles_packed_36: -1518431312730003203
+      tiles_packed_44: -8616506690660393592
+      tiles_packed_138: 1057179495630593323
+      tiles_packed_76: -707140061848814854
+      tiles_packed_79: -9174101037490101366
+      tiles_packed_142: -4121835539060904816
+      tiles_packed_83: -7255629384734106836
+      tiles_packed_167: -5880539746594316384
+      tiles_packed_114: -6418543647589588862
+      tiles_packed_12: 4239414877301166584
+      tiles_packed_78: 6777311085889757295
+      tiles_packed_84: -3542255889934710342
+      tiles_packed_95: 3205526906905920742
+      tiles_packed_15: 3068208773739843989
+      tiles_packed_98: 5083639387014122092
+      tiles_packed_80: 4695972797913443585
+      tiles_packed_65: 4251972116928005916
+      tiles_packed_170: 3381031453725623468
+      tiles_packed_177: -3892001284916802780
+      tiles_packed_133: -6138686211891082879
+      tiles_packed_160: 5831882220095128375
+      tiles_packed_50: 559866488050462025
+      tiles_packed_162: 4615625945858879415
+      tiles_packed_45: 6001085804420364791
+      tiles_packed_61: -7843938798037369319
+      tiles_packed_106: 2944870924967315107
+      tiles_packed_5: 2641870480212054535
+      tiles_packed_157: -8097051682016282178
+      tiles_packed_108: -5550348289688964072
+      tiles_packed_137: -4204818177702977822
+      tiles_packed_117: 5294796539829672385
+      tiles_packed_73: 4678303594150667106
+      tiles_packed_129: -1021047009662738865
+      tiles_packed_3: 6757897804379243199
+      tiles_packed_145: 8869067283115190099
+      tiles_packed_7: -7450114411058175551
+      tiles_packed_64: 5829724955469880265
+      tiles_packed_34: 1928334975753445801
+      tiles_packed_38: -6716901474380548147
+      tiles_packed_121: 1215064911806852459
+      tiles_packed_140: -1724414895344524921
+      tiles_packed_39: -7560949258953728537
+      tiles_packed_26: 8492894085007939084
+      tiles_packed_171: 4020300158951519016
+      tiles_packed_131: -7075564148539459097
+      tiles_packed_55: -3551797394069300298
+      tiles_packed_155: -5543899826569426333
+      tiles_packed_70: 6658560122404106165
+      tiles_packed_172: -5332074645434569691
+      tiles_packed_75: 801674432685922332
+      tiles_packed_57: -4433669844835282387
+      tiles_packed_68: 5147216638090992688
+      tiles_packed_43: -7781659508116617079
+      tiles_packed_28: 7753991744658916375
+      tiles_packed_166: 1025809602652806718
+      tiles_packed_169: -6769532302298129536
+      tiles_packed_94: 6798678809236926152
+      tiles_packed_32: -5260831446614447962
+      tiles_packed_67: -1347962281928127880
+      tiles_packed_107: 6035593255178549310
+      tiles_packed_96: -7902727485049719686
+      tiles_packed_150: 3715212662700152632
+      tiles_packed_178: -4687142431478982995
+      tiles_packed_123: 7805354591597286331
+      tiles_packed_103: 3116412788811490128
+      tiles_packed_119: 2675933898671186799
+      tiles_packed_89: 2300922674953917535
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
